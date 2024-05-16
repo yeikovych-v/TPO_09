@@ -57,7 +57,7 @@ public class ApiController {
             @RequestParam("age") int age
     ) {
         if (dataValidatorService.isInvalidWeightOrHeightOrAge(weight, height, age)) {
-            return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT)
+            return ResponseEntity.status(499)
                     .header("Reason", "invalid data, weight, height and age parameters must be positive numbers")
                     .body("499 - Invalid Data");
         }
